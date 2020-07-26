@@ -13,38 +13,51 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/signup-style.css">
+  
 
-    <title>sign up</title>
+  <title>Home</title>
   </head>
   <body style='font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";'>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
-      <a class="navbar-brand" href="home.html" style="font-family: 'Chelsea Market', cursive;">BLOGSTERS</a>
+    <nav class="navbar navbar-light navbar-expand-md shadow-sm fixed-top" style ="background-color: white;">
+      <div class="container-fluid">
+    <% if(!user) {  %>
+      <a class="navbar-brand" href="/" style="font-family: 'Chelsea Market', cursive;">Infix</a>
+     <% } else { %>
+      <a class="navbar-brand" href="/" style="font-family: 'Chelsea Market', cursive;"> <%= user.firstName %> </a>
+     <% } %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse navbr" id="navbarSupportedContent" style="font-size: 20px;">
+      <div class="collapse navbar-collapse navbr" id="navbarSupportedContent" style="font-size: 14px;">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active mx-3">
-            <a class="nav-link" href="/">Home</a>
+          <li class="nav-item active px-2">
+            <a class="nav-link active" href="/">Home</a>
           </li>
-          <li class="nav-item mx-3">
+          <li class="nav-item px-2">
             <a class="nav-link" href="/myblogs">Myblogs</a>
           </li>
-          <li class="nav-item mx-3">
+          <li class="nav-item px-2">
             <a class="nav-link" href="/add">Addblogs</a>
           </li>
-          <li class="nav-item  mx-3">
+          <li class="nav-item  px-2">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item  mx-3">
+          <% if(!user) { %>
+          <li class="nav-item  px-2">
             <a class="nav-link" href="/login">Login</a>
           </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="/register">Signup</a>
+          <li class="nav-item active px-2">
+            <a class="nav-link active" href="/register">Signup</a>
           </li>
+          <% } else { %>
+            <li class="nav-item  px-2">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+           <% } %> 
         </ul>
       </div>
+    </div> 
     </nav>
 
     <div class="container">

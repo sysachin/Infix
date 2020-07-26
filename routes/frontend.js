@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 /*register page request */
 router.get('/register', function(req, res, next) {
-  res.render('signup', {});
+  res.render('signup', {user:req.user});
 });
 
 /*add blog request */
